@@ -103,6 +103,7 @@
     <script src="{{ asset('public/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('public/js/demo/chart-pie-demo.js') }}"></script>
 
+    @include('admin.layouts.partials.scripts')    
 </body>
 
 </html>

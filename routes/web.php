@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\TechnologyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,16 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function() {
-    Auth::routes();
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Auth::routes(['register' => false]);
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('/', [HomeController::class, 'index'])->name('home');
+        Route::prefix('technology')->group(function () {
+            Route::get('/', [TechnologyController::class, 'index'])->name('technology.home');
+            Route::get('add', [TechnologyController::class, 'add'])->name('technology.add');
+            Route::post('submit', [TechnologyController::class, 'submit'])->name('technology.submit');
+            Route::get('/edit/{id}', [TechnologyController::class, 'edit'])->name('technology.edit');
+            Route::post('/update/{id}', [TechnologyController::class, 'update'])->name('technology.update');
+            Route::post('delete', [TechnologyController::class, 'delete'])->name('technology.delete');
+        });
+    });
 });
