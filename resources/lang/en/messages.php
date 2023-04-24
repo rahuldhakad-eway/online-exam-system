@@ -5,6 +5,12 @@ return [
         'technology_added' => 'Technology Added Successfully...',
         'technology_updated' => 'Technology Updated Successfully...',
         'technology_deleted' => 'Technology Deleted Successfully...'
+    ],
+
+    'developer_level' => [
+        'level_added' => 'Level Added Successfully...',
+        'level_updated' => 'Level Updated Successfully...',
+        'level_deleted' => 'Level Deleted Successfully...'
     ]
 ];
 

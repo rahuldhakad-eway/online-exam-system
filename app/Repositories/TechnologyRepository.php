@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-use App\Events\KYCCall;
 use App\Models\Technology;
 
 class TechnologyRepository
