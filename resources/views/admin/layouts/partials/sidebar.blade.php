@@ -41,6 +41,21 @@
     </div>
 </li>
 
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#developerLevel"
+        aria-expanded="true" aria-controls="developerLevel">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>Levels</span>
+    </a>
+    <div id="developerLevel" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="{{ route('developer.level.add') }}">Add</a>
+            <a class="collapse-item" href="{{ route('developer.level.home') }}">View</a>
+        </div>
+    </div>
+</li>
+
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
