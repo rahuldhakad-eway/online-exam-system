@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('get-all-technology', [ApiController::class, 'getAllTechnology']);
 Route::post('get-all-question', [ApiController::class, 'getAllQuestion']);
-Route::post('get-all-developre-level', [ApiController::class, 'getAllDeveloperLevel']);
+Route::post('get-all-developer-level', [ApiController::class, 'getAllDeveloperLevel']);
