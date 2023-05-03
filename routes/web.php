@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Admin\DeveloperLevelController;
+use App\Http\Controllers\Admin\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,16 @@ Route::prefix('admin')->group(function() {
             Route::get('/edit/{id}', [DeveloperLevelController::class, 'edit'])->name('developer.level.edit');
             Route::post('/update/{id}', [DeveloperLevelController::class, 'update'])->name('developer.level.update');
             Route::post('delete', [DeveloperLevelController::class, 'delete'])->name('developer.level.delete');
+        });
+
+        Route::prefix('question')->group(function () {
+            Route::get('/', [QuestionController::class, 'index'])->name('question.home');
+            Route::get('add', [QuestionController::class, 'add'])->name('question.add');
+            Route::post('submit', [QuestionController::class, 'submit'])->name('question.submit');
+            Route::get('show/{id}', [QuestionController::class, 'show'])->name('question.show');
+            Route::get('edit/{id}', [QuestionController::class, 'edit'])->name('question.edit');
+            Route::post('/update/{id}', [QuestionController::class, 'update'])->name('question.update');
+            Route::Post('delete', [QuestionController::class, 'delete'])->name('question.delete');
         });
     });
 });

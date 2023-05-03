@@ -11,7 +11,13 @@ return [
         'level_added' => 'Level Added Successfully...',
         'level_updated' => 'Level Updated Successfully...',
         'level_deleted' => 'Level Deleted Successfully...'
-    ]
+    ],
+
+    'question' => [
+        'question_added' => 'Question Added Successfully...',
+        'question_updated' => 'Question Updated Successfully...',
+        'question_deleted' => 'Question Deleted Successfully...'
+    ],
 ];
 
 ?>
