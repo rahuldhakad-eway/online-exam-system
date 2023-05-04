@@ -42,4 +42,14 @@ class QuestionRepository
                 ->delete();
     }
 
+    public function getAllQuestionByTechnologyAndLevel(int $technology_id, int $level_id)
+    {
+        return Question::with(['technology', 'level'])
+                ->where([
+                    'technology_id' => $technology_id,
+                    'level_id' => $level_id
+                ])
+                ->get();
+    }
+
 }

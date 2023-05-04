@@ -31,9 +31,9 @@ class ApiController extends Controller
         return response()->json($response);
     }
 
-    public function getAllQuestion(Request $request)
+    public function getAllQuestion(Request $request, int $technology_id, int $level_id)
     {
-       $questions = $this->questionRepository->getAllquestion();
+       $questions = $this->questionRepository->getAllQuestionByTechnologyAndLevel($technology_id, $level_id);
         if ($questions) {
             $response["status"] = true;
             $response["questions"] = $questions;
