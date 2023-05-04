@@ -9,7 +9,7 @@
             <select class="form-control" aria-label="Default select example" name="technology_id">
                 <option selected>Choose Technology</option>
                 @foreach($technologies as $technology)
-                    <option value="{{ $technology->id }}">{{ $technology->name }}</option>
+                    <option value="{{ $technology->id }}" {{ old('technology_id') == $technology->id ? 'selected' : '' }}>{{ $technology->name }}</option>
                 @endforeach
               </select>
             @error('technology_id')
@@ -21,7 +21,7 @@
             <select class="form-control" aria-label="Default select example" name="level_id">
                 <option selected>Choose Level</option>
                 @foreach($levels as $level)
-                    <option value="{{ $level->id }}">{{ $level->level }}</option>
+                    <option value="{{ $level->id }}" {{old('level_id') == $level->id ? 'selected' : ''}}>{{ $level->level }}</option>
                 @endforeach
               </select>
             @error('level_id')
@@ -30,35 +30,35 @@
         </div>
         <div class="mb-3">
             <label for="technology_name" class="form-label">Question</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="question_text"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="question_text">{{old('question_text')}}</textarea>
             @error('question_text')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3">
             <label for="technology_name" class="form-label">Option 1</label>
-            <input type="text" class="form-control" name="option1" placeholder="option1" class="@error('name') is-invalid @enderror">
+            <input type="text" class="form-control" name="option1" placeholder="option1" class="@error('name') is-invalid @enderror" value="{{ old('option1') }}">
             @error('option1')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3">
             <label for="technology_name" class="form-label">Option 2</label>
-            <input type="text" class="form-control" name="option2" placeholder="option2" class="@error('name') is-invalid @enderror">
+            <input type="text" class="form-control" name="option2" placeholder="option2" class="@error('name') is-invalid @enderror" value="{{ old('option2') }}">
             @error('option2')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3">
             <label for="technology_name" class="form-label">Option 3</label>
-            <input type="text" class="form-control" name="option3" placeholder="option3" class="@error('name') is-invalid @enderror">
+            <input type="text" class="form-control" name="option3" placeholder="option3" class="@error('name') is-invalid @enderror" value="{{ old('option3') }}">
             @error('option3')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3">
             <label for="technology_name" class="form-label">Option 4</label>
-            <input type="text" class="form-control" name="option4" placeholder="option4" class="@error('name') is-invalid @enderror">
+            <input type="text" class="form-control" name="option4" placeholder="option4" class="@error('name') is-invalid @enderror" value="{{ old('option4') }}">
             @error('option')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -66,9 +66,9 @@
         <div class="mb-3">
             <label for="answer_type" class="form-label">Answer Type</label>
             <select class="form-control" aria-label="Default select example" name="answer_type" id="answer_type">
-                <option selected>Choose Answer Type</option>
-                <option value="1">Single Select</option>
-                <option value="2">Multi Select</option>
+                <option value="">Choose Answer Type</option>
+                <option value="1" {{ old('answer_type') == 1 ? 'selected' : '' }}>Single Select</option>
+                <option value="2" {{ old('answer_type') == 2 ? 'selected' : '' }}>Multi Select</option>
               </select>
             @error('answer_type')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -77,11 +77,11 @@
         <div class="mb-3">
             <label for="technology_id" class="form-label">Correct Answer</label>
             <select class="form-control" aria-label="Default select example" name="answer" id="answer">
-                <option selected>Choose Answer Type</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
+                <option value="">Choose Answer Type</option>
+                <option value="1" {{ old('answer') == 1 ? 'selected' : '' }}>Option 1</option>
+                <option value="2" {{ old('answer') == 2 ? 'selected' : '' }}>Option 2</option>
+                <option value="3" {{ old('answer') == 3 ? 'selected' : '' }}>Option 3</option>
+                <option value="4" {{ old('answer') == 4 ? 'selected' : '' }}>Option 4</option>
               </select>
             @error('answer')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -89,7 +89,7 @@
         </div>
         <div class="mb-3">
             <label for="technology_name" class="form-label">Time Required (in mins)</label>
-            <input type="number" class="form-control" name="time_required" placeholder="" class="@error('name') is-invalid @enderror">
+            <input type="number" class="form-control" name="time_required" placeholder="" class="@error('name') is-invalid @enderror" value="{{ old('time_required') }}">
             @error('time_required')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
